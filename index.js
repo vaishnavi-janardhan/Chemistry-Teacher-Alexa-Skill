@@ -7,6 +7,7 @@ const SKILL_NAME = 'Chemistry Teacher';
 const HELP_MESSAGE = 'You can ask me for the formula or name of a chemical compound, or you can say exit... What can I help you with?';
 const HELP_REPROMPT = 'What can I help you with?';
 const STOP_MESSAGE = 'Thank you! Goodbye!';
+const ERROR_MESSAGE = 'Sorry, I dont know that. What else can I help you with?'
 
 const compounds = [
     {
@@ -90,7 +91,9 @@ const handlers = {
         this.emit(':responseReady');
     },
     'ChemicalFormulaIntent': function () {
-        var chemName = this.event.request.intent.slots.ChemicalCompoundName.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+        var chemName = null;
+        if(this.event.request.intent.slots.ChemicalCompoundName.resolutions.resolutionsPerAuthority[0].status.code == 'ER_SUCCESS_MATCH')
+            chemName = this.event.request.intent.slots.ChemicalCompoundName.resolutions.resolutionsPerAuthority[0].values[0].value.name;
         var formula = null;
         for(var i = 0; i < compounds.length; i++) {
             if (compounds[i].name == chemName)
@@ -104,7 +107,9 @@ const handlers = {
         this.emit(':responseReady');
     },
     'ChemicalNameIntent' : function() {
-        var chemFormula = this.event.request.intent.slots.ChemicalFormula.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+        var chemFormula = null;
+        if(this.event.request.intent.slots.ChemicalFormula.resolutions.resolutionsPerAuthority[0].status.code == 'ER_SUCCESS_MATCH')
+            chemFormula = this.event.request.intent.slots.ChemicalFormula.resolutions.resolutionsPerAuthority[0].values[0].value.name;
         var name = null;
         for(var i = 0; i < compounds.length; i++) {
           if(compounds[i].formula == chemFormula)
@@ -133,11 +138,11 @@ const handlers = {
         this.emit(':responseReady');
     },
     'AMAZON.FallbackIntent': function () {
-        this.response.speak(STOP_MESSAGE);
+        this.response.speak(ERROR_MESSAGE).listen(HELP_MESSAGE);
         this.emit(':responseReady');
     },
     'Unhandled': function () {
-        this.response.speak(STOP_MESSAGE);
+        this.response.speak(ERROR_MESSAGE).listen(HELP_MESSAGE);
         this.emit(':responseReady');
     },
     'SessionEndedRequest': function () {
