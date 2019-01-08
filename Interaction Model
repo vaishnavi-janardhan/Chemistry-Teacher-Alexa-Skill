@@ -1,0 +1,266 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "chemistry teacher",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "ChemicalFormulaIntent",
+                    "slots": [
+                        {
+                            "name": "ChemicalCompoundName",
+                            "type": "ChemicalCompoundName"
+                        }
+                    ],
+                    "samples": [
+                        "{ChemicalCompoundName} formula",
+                        "formula of {ChemicalCompoundName}",
+                        "what is {ChemicalCompoundName}",
+                        "what is short form of {ChemicalCompoundName}",
+                        "chemical formula for {ChemicalCompoundName}",
+                        "what is the formula for {ChemicalCompoundName}",
+                        "Chemical formula of {ChemicalCompoundName}",
+                        "{ChemicalCompoundName}",
+                        "Tell me the chemical formula of {ChemicalCompoundName}"
+                    ]
+                },
+                {
+                    "name": "ChemicalNameIntent",
+                    "slots": [
+                        {
+                            "name": "ChemicalFormula",
+                            "type": "ChemicalFormula"
+                        }
+                    ],
+                    "samples": [
+                        "what is {ChemicalFormula}",
+                        "{ChemicalFormula}",
+                        "name of {ChemicalFormula}",
+                        "chemical name of {ChemicalFormula}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "ChemicalFormula",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "NaHCO3"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "HNO3"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NaOH"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CH3OH"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CH4"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C6H6"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C6H12O6"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NH3"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C2H5OH"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NaCl"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CH3COOH"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H3PO4"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CO2"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H2SO4"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "HCl"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H2O"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "BaSO4"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CuSO4"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ChemicalCompoundName",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "sodium bicarbonate"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "nitric acid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sodium hydroxide",
+                                "synonyms": [
+                                    "caustic soda"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "methanol"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "methane"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "benzene"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "glucose"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ammonia"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ethanol"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sodium chloride",
+                                "synonyms": [
+                                    "table salt"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "acetic acid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "copper sulfate",
+                                "synonyms": [
+                                    "blue vitriol",
+                                    "copper sulphate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "phosphoric acid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "carbon dioxide"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sulfuric acid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hydrochloric acid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "water"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "barium Sulfate"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
